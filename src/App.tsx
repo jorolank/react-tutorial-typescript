@@ -1,6 +1,5 @@
 import React from 'react';
 import {Game} from "./Components/index";
-
 import "./App.css"
 function App() {
   return (

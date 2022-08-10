@@ -64,7 +64,17 @@ class Game extends React.Component<IProps, IState>{
         if(winner) {
             status = `Winner: ${winner}`
             //TOAST ID PROVIDED TO PREVENT DUPLICATES
-            toast(`Winner: ${winner}`, {toastId: 1})
+            toast(`Winner: ${winner}`,
+                {
+                    toastId: 1,
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                })
         }else{
             status = `Next player is: ${xIsNext ? X : O}`;
         }
