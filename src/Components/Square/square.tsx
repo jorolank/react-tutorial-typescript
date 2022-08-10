@@ -5,8 +5,7 @@ import "../../index.css"
 const Square = (props: ISquare) => {
     const { value, onClickSquare} = props;
     return (
-    <button className={"square"} onClick={onClickSquare} style={value === "X" ? {color: 'green'} : {color: 'red'}}>{value}</button>
+    <button className={"square"} onClick={onClickSquare} style={{color: value === 'X' ? 'green' : 'red'}}>{value}</button>
     )
 }
-
 export default Square

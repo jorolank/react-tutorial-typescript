@@ -1,7 +1,8 @@
 import React from "react"
 import {IProps, IState, TGameData} from "./types";
-import calculateWinner from "../calculateWinnerFN";
-import Board from "../Board/board";
+import {Board, calculateWinner} from "../index"
+import { toast, ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 import "../../index.css"
 
 class Game extends React.Component<IProps, IState>{
@@ -12,17 +13,22 @@ class Game extends React.Component<IProps, IState>{
                 squares: Array(9).fill(null),
             }],
             xIsNext: true,
-            stepNumber: 0
+            stepNumber: 0,
         }
     }
     handleClick(i: number){
         const history = this.state.history
+        const gameData:TGameData = {
+            X: 'X',
+            O: 'O'
+        }
+        const {X, O} = gameData ?? {}
         const current = history[history.length - 1]
         const squares = current.squares.slice()
         if(calculateWinner(squares) || squares[i]){
             return
         }
-        squares[i] = this.state.xIsNext ? 'X' : 'O';
+        squares[i] = this.state.xIsNext ? X : O;
         this.setState({
             history: [...history, {squares}],
             xIsNext: !this.state.xIsNext,
@@ -36,9 +42,14 @@ class Game extends React.Component<IProps, IState>{
             xIsNext: (step % 2) === 0
         })
     }
-
     render() {
         const { xIsNext } = this.state
+        let status: string;
+        const gameData:TGameData = {
+            X: 'X',
+            O: 'O'
+        }
+        const {X, O} = gameData ?? {}
         const history = this.state.history
         const current = history[this.state.stepNumber]
         const winner = calculateWinner(current.squares);
@@ -50,19 +61,16 @@ class Game extends React.Component<IProps, IState>{
                 </li>
             )
         })
-        let status: string;
-        const gameData:TGameData = {
-            X: 'X',
-            O: 'O'
-        }
-        const {X, O} = gameData ?? {}
         if(winner) {
             status = `Winner: ${winner}`
+            //TOAST ID PROVIDED TO PREVENT DUPLICATES
+            toast(`Winner: ${winner}`, {toastId: 1})
         }else{
             status = `Next player is: ${xIsNext ? X : O}`;
         }
         return(
             <div className="game">
+                <ToastContainer/>
                 <div className="game-board">
                     <Board squares={current.squares} onClickBoard={(arrayElement: number) => this.handleClick(arrayElement)} />
                 </div>
