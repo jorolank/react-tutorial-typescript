@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {Link} from "react-router-dom";
 
-function ColorSchemesExample() {
+function NavigationBar() {
     return (
         <>
             <Navbar bg="dark" variant="dark">
@@ -23,4 +23,4 @@ function ColorSchemesExample() {
     );
 }
 
-export default ColorSchemesExample;
+export default NavigationBar;

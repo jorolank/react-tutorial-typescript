@@ -1,17 +1,14 @@
 import React from 'react';
-import {Game} from "./Components/index";
+import {Game} from "./Components/";
 import "./App.css"
-import ColorSchemesExample from "./Pages/Navbar";
-import Footer from "./Pages/Footer";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Rules from "./Pages/Rules/rules";
-import HomePage from "./Pages/Home/home";
+import {Footer, HomePage, NavigationBar, Rules} from "./Pages"
 
 function App() {
     return (
         <BrowserRouter>
             <div className="parent-div">
-                <ColorSchemesExample/>
+                <NavigationBar/>
                 <h1 className="header-name">Tic-Tac-Toe</h1>
                 <Routes>
                     <Route path="/" element={<HomePage/>}></Route>
