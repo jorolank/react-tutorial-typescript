@@ -1,12 +1,9 @@
 import React from "react"
-import {IProps, IState} from "./types";
+import {IProps, IState, TGameData} from "./types";
 import calculateWinner from "../calculateWinnerFN";
 import Board from "../Board/board";
 import "../../index.css"
-type TGameData = {
-    X: string
-    O: string
-}
+
 class Game extends React.Component<IProps, IState>{
     constructor(props: IProps) {
         super(props);

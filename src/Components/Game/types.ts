@@ -8,7 +8,7 @@ export interface ISquare {
 }
 export interface IProps{}
 
-export interface TGameData{
+export type TGameData = {
     X: string
     O: string
 }
