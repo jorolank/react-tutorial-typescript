@@ -1,10 +1,9 @@
 import React from 'react';
-import Game from "./Components/Game/game";
+import {Game} from "./Components/index";
 
 function App() {
   return (
-   <Game/>
+        <Game/>
   );
 }
-
 export default App;
