@@ -56,7 +56,7 @@ class Game extends React.Component<IProps, IState> {
         const moves = history.map((step, move) => {
             const desc = move ? `Go to move # ${move}` : `Go to game start`;
             return (
-                <li key={move}>
+                <li className="mb-2" key={move}>
                     <button className="game-button" onClick={() => this.jumpTo(move)}>{desc}</button>
                 </li>
             )
