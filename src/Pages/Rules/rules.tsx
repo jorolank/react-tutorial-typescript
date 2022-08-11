@@ -4,7 +4,7 @@ import "./rules.css"
 const Rules = () => {
     return (
         <div className="container">
-            <h1>Rules for Tic-Tac-Toe</h1>
+            <h1 className="mb-4 text-center">Rules for Tic-Tac-Toe</h1>
             <ol className="ordered-lists-rules">
                 <li id="lists-rules">The game is played on a grid that's 3 squares by 3 squares.</li>
                 <li id="lists-rules">You are X, your friend (or the computer in this case) is O. Players take turns
