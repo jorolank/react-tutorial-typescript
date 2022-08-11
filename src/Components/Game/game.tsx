@@ -1,11 +1,9 @@
 import React from "react"
 import {IProps, IState, TGameData} from "./types";
-import {Board, calculateWinner} from "../index"
-import { toast, ToastContainer } from "react-toastify"
-import 'react-toastify/dist/ReactToastify.css';
-import "../../index.css"
+import {Board, calculateWinner, CheckGameOutcome, OrderedLists} from "../"
+import {toast, ToastContainer} from "react-toastify"
 
-class Game extends React.Component<IProps, IState>{
+class Game extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
         this.state = {
@@ -43,15 +41,16 @@ class Game extends React.Component<IProps, IState>{
         })
     }
     render() {
-        const { xIsNext } = this.state
+        const {xIsNext} = this.state
         let status: string;
-        const gameData:TGameData = {
+        const gameData: TGameData = {
             X: 'X',
             O: 'O'
         }
         const {X, O} = gameData ?? {}
         const history = this.state.history
         const current = history[this.state.stepNumber]
+        const tieUp = current.squares.filter((player) => player === null)
         const winner = calculateWinner(current.squares);
         const moves = history.map((step, move) => {
             const desc = move ? `Go to move # ${move}` : `Go to game start`;
@@ -61,7 +60,7 @@ class Game extends React.Component<IProps, IState>{
                 </li>
             )
         })
-        if(winner) {
+        if (winner) {
             status = `Winner: ${winner}`
             //TOAST ID PROVIDED TO PREVENT DUPLICATES
             toast(`Winner: ${winner}`,
@@ -75,21 +74,23 @@ class Game extends React.Component<IProps, IState>{
                     draggable: true,
                     progress: undefined,
                 })
-        }else{
+
+        } else if (!tieUp.length) {
+            status = `We tied`
+            toast("We tied", {toastId: 2})
+        } else {
             status = `Next player is: ${xIsNext ? X : O}`;
         }
-        return(
+        return (
             <div className="game">
                 <ToastContainer/>
                 <div className="game-board">
-                    <Board squares={current.squares} onClickBoard={(arrayElement: number) => this.handleClick(arrayElement)} />
+                    <Board squares={current.squares}
+                           onClickBoard={(arrayElement: number) => this.handleClick(arrayElement)}/>
                 </div>
                 <div className="game_info">
-                    {/* Condition for style css */}
-                    {status === 'Next player is: X' || winner === 'X' ?
-                        <div className="status-green">{status}</div> :
-                        <div className="status-red">{status}</div>}
-                    <ol>{moves}</ol>
+                    <CheckGameOutcome status={status} winner={winner}/>
+                    <OrderedLists moves={moves}/>
                 </div>
             </div>
         );
