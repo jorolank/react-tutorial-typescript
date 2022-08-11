@@ -2,7 +2,7 @@ import React from "react"
 import {IProps, IState, TGameData} from "./types";
 import {Board, calculateWinner, CheckGameOutcome, GameHistory} from "../"
 import {toast, ToastContainer} from "react-toastify"
-import HeaderName from "../../Pages/Header/header";
+import {HeaderName} from "../../Pages/";
 
 class Game extends React.Component<IProps, IState> {
     constructor(props: IProps) {
@@ -47,7 +47,7 @@ class Game extends React.Component<IProps, IState> {
         const gameData: TGameData = {
             X: 'X',
             O: 'O'
-        }
+        };
         const {X, O} = gameData ?? {}
         const history = this.state.history
         const current = history[this.state.stepNumber]
