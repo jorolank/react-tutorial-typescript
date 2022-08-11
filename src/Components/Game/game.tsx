@@ -1,7 +1,8 @@
 import React from "react"
 import {IProps, IState, TGameData} from "./types";
-import {Board, calculateWinner, CheckGameOutcome, OrderedLists} from "../"
+import {Board, calculateWinner, CheckGameOutcome, GameHistory} from "../"
 import {toast, ToastContainer} from "react-toastify"
+import HeaderName from "../../Pages/Header/header";
 
 class Game extends React.Component<IProps, IState> {
     constructor(props: IProps) {
@@ -77,22 +78,35 @@ class Game extends React.Component<IProps, IState> {
 
         } else if (!tieUp.length) {
             status = `We tied`
-            toast("We tied", {toastId: 2})
+            toast("We tied",
+                {
+                    toastId: 2,
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                })
         } else {
             status = `Next player is: ${xIsNext ? X : O}`;
         }
         return (
-            <div className="game">
-                <ToastContainer/>
-                <div className="game-board">
-                    <Board squares={current.squares}
-                           onClickBoard={(arrayElement: number) => this.handleClick(arrayElement)}/>
+            <>
+                <HeaderName/>
+                <div className="game">
+                    <ToastContainer/>
+                    <div className="game-board">
+                        <Board squares={current.squares}
+                               onClickBoard={(arrayElement: number) => this.handleClick(arrayElement)}/>
+                    </div>
+                    <div className="game_info">
+                        <CheckGameOutcome status={status} winner={winner}/>
+                        <GameHistory moves={moves}/>
+                    </div>
                 </div>
-                <div className="game_info">
-                    <CheckGameOutcome status={status} winner={winner}/>
-                    <OrderedLists moves={moves}/>
-                </div>
-            </div>
+            </>
         );
     }
 }

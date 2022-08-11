@@ -1,4 +1,4 @@
-export default function calculateWinner (squares: Array<string>){
+const calculateWinner = (squares: Array<string>) => {
     const lines = [
         [0, 1, 2],
         [3, 4, 5],
@@ -17,3 +17,4 @@ export default function calculateWinner (squares: Array<string>){
     }
     return null
 }
+export default calculateWinner

@@ -13,17 +13,26 @@ ol, ul {
   content: "";
   display: table;
 }
+
 .status {
   margin-bottom: 10px;
 }
-.status-green{
+
+.status-yellow {
+  margin-left: 35px;
+  color: yellow
+}
+
+.status-green {
   margin-left: 35px;
   color: green;
 }
-.status-red{
+
+.status-red {
   margin-left: 35px;
   color: red;
 }
+
 .square {
   background: #fff;
   border: 1px solid #999;
@@ -90,8 +99,13 @@ ol, ul {
   border: 0;
   transition: box-shadow .2s;
 }
+
 .game-button:hover {
   box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+}
+
+.ordered-lists-rules {
+  margin-top: 40px;
 }
 
 

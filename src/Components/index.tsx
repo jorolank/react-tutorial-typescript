@@ -3,6 +3,6 @@ import Game from "./Game/game";
 import Board from "./Board/board";
 import calculateWinner from "./calculateWinnerFN";
 import CheckGameOutcome from "./CheckGameOutcome/checkGameOutcome";
-import OrderedLists from "./OrderedLists/orderedList";
+import GameHistory from "./GameHistory/gameHistory";
 
-export {Square, Game, Board, calculateWinner, CheckGameOutcome, OrderedLists}
+export {Square, Game, Board, calculateWinner, CheckGameOutcome, GameHistory}

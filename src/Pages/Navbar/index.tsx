@@ -8,7 +8,7 @@ function NavigationBar() {
         <>
             <Navbar bg="dark" variant="dark">
                 <Container>
-                    <Link className="navbar-brand" to={"/"}>Home</Link>
+                    <Link className="navbar-brand" to={"/"}>About</Link>
                     <Nav className="me-auto">
                         <Nav>
                             <Link to="/rules" className="nav-link">Rules</Link>
