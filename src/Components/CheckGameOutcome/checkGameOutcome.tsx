@@ -7,7 +7,7 @@ const checkGameOutcome = (props: ICheckGameOutcome) => {
         return (<div className="status-green">{status}</div>)
     }
     if (status === "We tied") {
-        return (<div className="status-yellow">{status}</div>)
+        return (<div className="status-tied">{status}</div>)
     }
     return (<div className="status-red">{status}</div>)
 }

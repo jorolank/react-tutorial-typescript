@@ -18,17 +18,23 @@ ol, ul {
   margin-bottom: 10px;
 }
 
-.status-yellow {
+.status-tied {
+  font-size: 24px;
+  font-family: "Calibri Light";
   margin-left: 35px;
-  color: yellow
+  color: black
 }
 
 .status-green {
   margin-left: 35px;
+  font-size: 24px;
+  font-family: "Calibri Light";
   color: green;
 }
 
 .status-red {
+  font-size: 24px;
+  font-family: "Calibri Light";
   margin-left: 35px;
   color: red;
 }
@@ -37,15 +43,15 @@ ol, ul {
   background: #fff;
   border: 1px solid #999;
   float: left;
-  font-size: 24px;
+  font-size: 40px;
   font-weight: bold;
   line-height: 34px;
-  height: 34px;
+  height: 80px;
   margin-right: 0px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 39px;
+  width: 100px;
   border: 1px solid #2c3e50;
   border-radius: 2px;
   font-family: Helvetica;
