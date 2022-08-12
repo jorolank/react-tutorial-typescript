@@ -1,7 +1,7 @@
 import React from "react"
 import {IProps, IState, TGameData} from "./types";
-import {Board, calculateWinner, CheckGameOutcome, GameHistory} from "../"
-import {toast, ToastContainer} from "react-toastify"
+import {Board, calculateWinner, CheckGameOutcome, dynamicToast, GameHistory} from "../"
+import {ToastContainer} from "react-toastify"
 import {HeaderName} from "../../Pages/";
 
 class Game extends React.Component<IProps, IState> {
@@ -63,32 +63,10 @@ class Game extends React.Component<IProps, IState> {
         })
         if (winner) {
             status = `Winner: ${winner}`
-            //TOAST ID PROVIDED TO PREVENT DUPLICATES
-            toast(`Winner: ${winner}`,
-                {
-                    toastId: 1,
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                })
-
+            dynamicToast(status, winner)
         } else if (!tieUp.length) {
             status = `We tied`
-            toast("We tied",
-                {
-                    toastId: 2,
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                })
+            dynamicToast(status)
         } else {
             status = `Next player is: ${xIsNext ? X : O}`;
         }
