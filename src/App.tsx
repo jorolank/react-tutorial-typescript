@@ -1,6 +1,6 @@
 import React from 'react';
 import {Game} from "./Components/";
-import "./App.css"
+
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {About, Footer, NavigationBar, PageNotFound, Rules} from "./Pages"
 

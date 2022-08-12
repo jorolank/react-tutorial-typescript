@@ -57,7 +57,7 @@ class Game extends React.Component<IProps, IState> {
             const desc = move ? `Go to move # ${move}` : `Go to game start`;
             return (
                 <li className="mb-2" key={move}>
-                    <button className="game-button" onClick={() => this.jumpTo(move)}>{desc}</button>
+                    <button className="btn btn-primary" onClick={() => this.jumpTo(move)}>{desc}</button>
                 </li>
             )
         })

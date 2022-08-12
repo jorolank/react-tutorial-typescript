@@ -1,0 +1,14 @@
+.header-name {
+  margin-left: 45%;
+
+}
+
+$theme-colors: (
+        'primary': #AA336A,
+        "info": tomato,
+        "danger": teal,
+        "dark": #AA336A
+);
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";
