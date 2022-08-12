@@ -22,7 +22,9 @@ ol, ul {
   font-size: 24px;
   font-family: "Calibri Light";
   margin-left: 35px;
-  color: black
+  color: black;
+  font-weight: bold;
+
 }
 
 .status-green {
@@ -30,6 +32,7 @@ ol, ul {
   font-size: 24px;
   font-family: "Calibri Light";
   color: green;
+  font-weight: bold;
 }
 
 .status-red {
@@ -37,6 +40,7 @@ ol, ul {
   font-family: "Calibri Light";
   margin-left: 35px;
   color: red;
+  font-weight: bold;
 }
 
 .square {

@@ -9,8 +9,10 @@ function NavigationBar() {
         <>
             <Navbar bg="dark" variant="dark" className="mb-4">
                 <Container>
-                    <Link className="navbar-brand" to={"/"}>About</Link>
                     <Nav className="me-auto">
+                        <Nav>
+                            <Link className="nav-link" to={"/"}>About</Link>
+                        </Nav>
                         <Nav>
                             <Link to="/rules" className="nav-link">Rules</Link>
                         </Nav>

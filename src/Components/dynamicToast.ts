@@ -1,8 +1,8 @@
 import {toast} from "react-toastify";
 
-const dynamicToast = (inputWinner: string, winner?: string) => {
+const dynamicToast = (message: string, winner?: string) => {
     if (winner === 'X') {
-        toast.success(inputWinner,
+        toast.success(message,
             {
                 toastId: 1,
                 position: "top-center",
@@ -16,7 +16,7 @@ const dynamicToast = (inputWinner: string, winner?: string) => {
         return
     }
     if (winner === 'O') {
-        toast.error(inputWinner,
+        toast.error(message,
             {
                 toastId: 2,
                 position: "top-center",
@@ -29,7 +29,7 @@ const dynamicToast = (inputWinner: string, winner?: string) => {
             })
         return
     }
-    toast.warning(inputWinner,
+    toast.warning(message,
         {
             toastId: 3,
             position: "top-center",
