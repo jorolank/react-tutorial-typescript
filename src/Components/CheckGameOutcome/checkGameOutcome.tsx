@@ -6,7 +6,7 @@ const checkGameOutcome = (props: ICheckGameOutcome) => {
     if (status === "Next player is: X" || winner === 'X') {
         return (<div className="status-green">{status}</div>)
     }
-    if (status === "We tied") {
+    if (status === "DRAW!") {
         return (<div className="status-tied">{status}</div>)
     }
     return (<div className="status-red">{status}</div>)

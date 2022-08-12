@@ -13,8 +13,10 @@ const dynamicToast = (inputWinner: string, winner?: string) => {
                 draggable: true,
                 progress: undefined,
             })
-    } else
-        toast(inputWinner,
+        return
+    }
+    if (winner === 'O') {
+        toast.error(inputWinner,
             {
                 toastId: 2,
                 position: "top-center",
@@ -25,5 +27,18 @@ const dynamicToast = (inputWinner: string, winner?: string) => {
                 draggable: true,
                 progress: undefined,
             })
+        return
+    }
+    toast.warning(inputWinner,
+        {
+            toastId: 3,
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        })
 }
 export default dynamicToast

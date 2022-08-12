@@ -62,10 +62,10 @@ class Game extends React.Component<IProps, IState> {
             )
         })
         if (winner) {
-            status = `Winner: ${winner}`
+            status = `Winner: ${winner}!`
             dynamicToast(status, winner)
         } else if (!tieUp.length) {
-            status = `We tied`
+            status = `DRAW!`
             dynamicToast(status)
         } else {
             status = `Next player is: ${xIsNext ? X : O}`;
