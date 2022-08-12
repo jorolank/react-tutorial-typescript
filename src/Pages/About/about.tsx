@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom";
 
 const About = () => {
     return (
@@ -14,6 +15,8 @@ const About = () => {
                 their
                 marks in a horizontal, vertical, or diagonal row is the winner.
             </p>
+            <p>Ref: <Link to="https://reactjs.org/tutorial/tutorial.html#function-components">
+                https://reactjs.org/tutorial/tutorial.html#function-components</Link></p>
         </div>
     )
 }
